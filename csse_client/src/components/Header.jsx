@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div>
       
-<nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:'#204051'}}>
+<nav className="navbar navbar-expand-lg navbar-dark fixed-top" style={{backgroundColor:'#204051'}}>
   
   <div className="container-fluid">
     
@@ -34,7 +34,7 @@ export default function Header() {
       </a>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link" href="#">Home</a>
+          <a className="nav-link" href="/homepage">Home</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Time Table</a>

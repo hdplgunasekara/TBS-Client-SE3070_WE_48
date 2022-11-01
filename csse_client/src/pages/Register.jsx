@@ -18,6 +18,8 @@ export default function Register() {
   return (
     <>
     <Header/>
+    <br/>
+      <br/>
     <MDBContainer fluid className='p-4'>
 
       <MDBRow>
@@ -37,6 +39,15 @@ export default function Register() {
 
                 <MDBCol col='6'>
                   <MDBInput wrapperClass='mb-4' label='Last name' id='form1' type='text'/>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='Address' id='form1' type='text'/>
+                </MDBCol>
+
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='Phone Number' id='form1' type='text'/>
                 </MDBCol>
               </MDBRow>
 
