@@ -10,15 +10,22 @@ import {
   MDBCheckbox,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import "../assets/style.css"
 
 export default function Login() {
   return (
+    <>
+    <Header/>
+    <br/>
+      <br/>
+      <br/>
     <MDBContainer fluid className="p-4">
-      <br />
       <h1>Log in as</h1>
       <MDBRow>
         <MDBCol md="6">
-          <MDBCard className="my-3" style={{ backgroundColor: "#e6e6e6" }}>
+          <MDBCard className="my-3" style={{ backgroundColor: "#EEEEEE" }}>
             <MDBCardBody className="p-5">
               <h2>Local User</h2>
               <br />
@@ -40,24 +47,22 @@ export default function Login() {
                 <a href="">Forgot password?</a>
               </div>
 
-              <MDBBtn className="w-100 mb-4" size="md">
+              <MDBBtn className="btn btn-info w-100 mb-4" size="md">
                 sign in
               </MDBBtn>
 
               <div className="text-center">
                 <p>OR</p>
-                <a href="/register">
-                  <MDBBtn className="w-100 mb-4" size="md">
+                  <MDBBtn className="btn btn-info w-100 mb-4" size="md" href="/register">
                     sign up
                   </MDBBtn>
-                </a>
               </div>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
 
         <MDBCol md="6">
-          <MDBCard className="my-3" style={{ backgroundColor: "#e6e6e6" }}>
+          <MDBCard className="my-3" style={{ backgroundColor: "#EEEEEE" }}>
             <MDBCardBody className="p-5">
               <h2>Foreign User</h2>
               <br />
@@ -73,7 +78,7 @@ export default function Login() {
                 </MDBCol>
               </MDBRow>
 
-              <MDBBtn className="w-100 mb-4" size="md">
+              <MDBBtn className="btn btn-info w-100 mb-4" size="md">
                 Create a one day pass
               </MDBBtn>
             </MDBCardBody>
@@ -81,5 +86,7 @@ export default function Login() {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    <Footer/>
+    </>
   );
 }

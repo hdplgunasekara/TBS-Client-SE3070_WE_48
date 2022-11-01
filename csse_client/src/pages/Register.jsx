@@ -14,6 +14,8 @@ import {
     MDBIcon
   }
   from 'mdb-react-ui-kit';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -77,6 +79,10 @@ export default function Register() {
   
 
   return (
+    <>
+    <Header/>
+    <br/>
+      <br/>
     <MDBContainer fluid className='p-4'>
 
       <MDBRow>
@@ -84,7 +90,7 @@ export default function Register() {
 
         <MDBCol md='6'>
 
-          <MDBCard className='my-5' style={{backgroundColor: "#e6e6e6" }}>
+          <MDBCard className='my-5' style={{backgroundColor: "#EEEEEE" }}>
             <MDBCardBody className='p-5'>
             <h2>Register</h2>
             <br/>
@@ -106,6 +112,15 @@ export default function Register() {
                     setMobile(e.target.value);
                   }}
                   required/>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='Address' id='form1' type='text'/>
+                </MDBCol>
+
+                <MDBCol col='6'>
+                  <MDBInput wrapperClass='mb-4' label='Phone Number' id='form1' type='text'/>
                 </MDBCol>
               </MDBRow>
 
@@ -132,7 +147,8 @@ export default function Register() {
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
 
-              <MDBBtn className='w-100 mb-4' size='md' onClick={sendData}>sign up</MDBBtn>
+              <MDBBtn className='btn btn-info w-100 mb-4' size='md' onClick={sendData}>sign up</MDBBtn>
+
 
               <div className="text-center">
 
@@ -159,5 +175,7 @@ export default function Register() {
       </MDBRow>
 
     </MDBContainer>
+    <Footer/>
+    </>
   );
 }
