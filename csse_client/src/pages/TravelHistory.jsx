@@ -1,4 +1,6 @@
 import React from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
 import {
     MDBBtn,
     MDBContainer,
@@ -16,6 +18,23 @@ import Viewtravelhistmodal from "../components/modals/Viewtravelhistmodal";
 import Reviewmodal from "../components/modals/Reviewmodal";
 
 export default function TravelHistory() {
+  const [travels, setTravels] = useState([]);
+
+  useEffect(()=>{ 
+    const getTravels = async()=>{  
+    const res=  await fetch(
+        `http://127.0.0.1:8090/travel/${localStorage.getItem('email')}` );
+        
+         const data = await res.json()
+         console.log(data)
+        setTravels(data)
+        
+    };
+    getTravels();
+   
+    },[]);
+
+
   return (
     <div>
       <Header />
@@ -35,28 +54,17 @@ export default function TravelHistory() {
             <td>Action</td>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Colombo</td>
-            <td>Moratuwa</td>
-            <td>20-08-2022</td>
-            <td>100</td>
+        <tbody> 
+
+        {travels.map(travels => <tr key={travels._id}>
+            <td>{travels.source}</td>
+            <td>{travels.destination?travels.destination:"Incomplete Trip"}</td>
+            <td>{travels.createdAt.toString().substring(0,10)}</td>
+            <td>{travels.amount?travels.amount:"Incomplete Trip"}</td>
             <td><Reviewmodal/><Viewtravelhistmodal/></td>
           </tr>
-          <tr>
-            <td>Colombo</td>
-            <td>Moratuwa</td>
-            <td>20-08-2022</td>
-            <td>100</td>
-            <td><Reviewmodal/><Viewtravelhistmodal/></td>
-          </tr>
-          <tr>
-            <td>Colombo</td>
-            <td>Moratuwa</td>
-            <td>20-08-2022</td>
-            <td>100</td>
-            <td><Reviewmodal/><Viewtravelhistmodal/></td>
-          </tr>
+    )}
+
         </tbody>
       </table>
       </MDBContainer>

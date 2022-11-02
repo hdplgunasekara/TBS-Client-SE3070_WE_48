@@ -1,4 +1,6 @@
 import React from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
 import {
   MDBBtn,
   MDBContainer,
@@ -15,6 +17,19 @@ import Header from "../components/Header";
 import Topupcreditmodal from "../components/modals/Topupcreditmodal";
 
 export default function CreditBalance() {
+  const [balance, setBalance] = useState("");
+  useEffect(()=>{ 
+    const getUser = async()=>{  
+    const res=  await axios.get(
+        `http://127.0.0.1:8090/user/${localStorage.getItem('id')}` );
+      setBalance(res.data.data.credit_amount);
+    };
+    getUser();
+   
+    },[]);
+
+
+
   return (
     <div>
       <Header />
@@ -30,11 +45,7 @@ export default function CreditBalance() {
             <table class="" style={{ fontSize: "25px", textAlign: "left" }}>
               <tr>
                 <td>Account Credit Balance</td>
-                <td>= $ 99</td>
-              </tr>
-              <tr>
-                <td>Account Fine</td>
-                <td>= $ 2</td>
+                <td>={balance}.00 LKR</td>
               </tr>
             </table>
           </div>
