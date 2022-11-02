@@ -47,7 +47,7 @@ export default function Register() {
      
       swal({
         title: "Success!",
-        text: "Article Added Successfully",
+        text: "User Registered Successfully",
         icon: 'success',
         timer: 2000,
         button: false,
@@ -114,15 +114,7 @@ export default function Register() {
                   required/>
                 </MDBCol>
               </MDBRow>
-              <MDBRow>
-                <MDBCol col='6'>
-                  <MDBInput wrapperClass='mb-4' label='Address' id='form1' type='text'/>
-                </MDBCol>
-
-                <MDBCol col='6'>
-                  <MDBInput wrapperClass='mb-4' label='Phone Number' id='form1' type='text'/>
-                </MDBCol>
-              </MDBRow>
+              
 
               <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'
               value={email_address}
